@@ -23,7 +23,7 @@ export function Names() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen h-full bg-zinc-800">
+    <div className="flex flex-col items-center justify-center h-full bg-zinc-800">
       {alertMessage && (
         <span className="bg-red-200 text-red-800 p-2 rounded">
           {alertMessage}

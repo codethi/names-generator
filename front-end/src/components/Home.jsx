@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -18,14 +17,13 @@ export function Home() {
   }
 
   return (
-    <div className="isolate px-6 pt-14 lg:px-8 bg-zinc-800 h-screen ">
-      {alertMessage && (
-        <span className="bg-blue-600 text-zinc-100 font-bold p-3 rounded">
-          {alertMessage}
-        </span>
-      )}
-
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+    <div className="bg-zinc-800 h-screen ">
+      <div className="flex flex-col items-center justify-center h-full">
+        {alertMessage && (
+          <span className="bg-blue-600 text-zinc-100 font-bold p-3 rounded">
+            {alertMessage}
+          </span>
+        )}
         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
           <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
             To access the project repository, just access{" "}
