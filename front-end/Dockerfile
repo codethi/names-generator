@@ -10,9 +10,6 @@ COPY . .
 # instala as dependências do projeto
 RUN npm i
 
-#bugfix - enquanto usamos o CRA para buildar
-# RUN chmod a+x /tmp/react/node_modules/.bin/react-scripts 
-
 # criamos a versão otimizada de produção
 RUN npm run build
 
