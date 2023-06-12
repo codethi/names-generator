@@ -28,7 +28,10 @@ export function Home() {
         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
           <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
             To access the project repository, just access{" "}
-            <a href="#" className="font-semibold text-blue-400">
+            <a
+              href="https://github.com/codethi/names-generator"
+              className="font-semibold text-blue-400"
+            >
               <span className="absolute inset-0" aria-hidden="true" />
               this link <span aria-hidden="true">&rarr;</span>
             </a>
