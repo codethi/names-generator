@@ -11,7 +11,7 @@ COPY . .
 RUN npm i
 
 #bugfix - enquanto usamos o CRA para buildar
-RUN chmod a+x /tmp/react/node_modules/.bin/react-scripts 
+# RUN chmod a+x /tmp/react/node_modules/.bin/react-scripts 
 
 # criamos a versão otimizada de produção
 RUN npm run build
@@ -20,7 +20,7 @@ RUN npm run build
 RUN mkdir -p /var/www/html
 
 # move o conteúdo
-RUN mv build/* /var/www/html
+RUN mv dist/* /var/www/html
 
 # sai da pasta
 WORKDIR /
