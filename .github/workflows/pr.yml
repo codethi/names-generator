@@ -1,0 +1,20 @@
+name: Pull Request on Github # nome qualquer
+on: [pull_request] # ação no github
+jobs: # o que vai acontecer
+  PullRequest-GitHub: #nome qualquer
+    runs-on: ubuntu-latest # máquina no github para rodar nossos testes
+    steps: # passos até rodar os testes
+      - name: Check out repository code # nome qualquer
+        uses: actions/checkout@v3 # plugin para pegar todo código do repositório e adicionar na máquina
+      - name: Make a new envfile # nome qualquer
+        uses: SpicyPizza/create-envfile@v1.3 # plugin para criar um novo arquivo .env na minha máquina
+        with: # configurações desse novo arquivo .env
+          envkey_PORT: 5000 # porta do backend no docker
+          envkey_POSTGRES_USER: "postgres" #usuário do banco do docker
+          envkey_POSTGRES_PASSWORD: "postgres" # senha do banco do docker
+          envkey_POSTGRES_DB: "names" # nome do banco no docker
+          envkey_DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/names" # url do banco no docker
+          directory: back-end # pasta que o .env será criado
+          file_name: .env.test # nome do arquivo que vai criar (tem que ser igual ao compose de testes)
+      - name: Run tests # nome qualquer
+        run: docker compose -f docker-compose-test.yml run node npm run test # Roda o docker compose no arquivo com nome (-f) docker-compose-test.yml, depois que subir a máuqina com docker, roda o comando de testes configurado no package.json
