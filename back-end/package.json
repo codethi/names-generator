@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "tsc",
+    "prebuild": "rm -rf dist",
+    "build": "tsc -p tsconfig.build.json",
     "start": "npm run prisma:migrate:deploy && node dist/server.js",
     "dev": "nodemon src/server.ts",
     "prisma:migrate:dev": "prisma migrate dev",
