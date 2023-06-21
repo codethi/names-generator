@@ -13,7 +13,7 @@ jobs: # o que vai acontecer
           envkey_POSTGRES_USER: "postgres" #usuário do banco do docker
           envkey_POSTGRES_PASSWORD: "postgres" # senha do banco do docker
           envkey_POSTGRES_DB: "names" # nome do banco no docker
-          envkey_DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/names" # url do banco no docker
+          envkey_DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/names?schema=public" # url do banco no docker
           directory: back-end # pasta que o .env será criado
           file_name: .env.test # nome do arquivo que vai criar (tem que ser igual ao compose de testes)
       - name: Run tests # nome qualquer
